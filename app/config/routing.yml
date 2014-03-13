@@ -1,0 +1,4 @@
+broadcast_demo:
+    resource: "@BroadcastDemoBundle/Resources/config/routing.yml"
+    prefix:   /
+

@@ -1,0 +1,7 @@
+parameters:
+#    broadcast_demo.example.class: Broadcast\DemoBundle\Example
+
+services:
+#    broadcast_demo.example:
+#        class: %broadcast_demo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

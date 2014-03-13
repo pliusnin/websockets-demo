@@ -1,0 +1,7 @@
+broadcast_demo_homepage:
+    pattern:  /
+    defaults: { _controller: BroadcastDemoBundle:Default:index }
+
+broadcast_demo_send_message:
+    pattern:  /send
+    defaults: { _controller: BroadcastDemoBundle:Default:sendMessage }

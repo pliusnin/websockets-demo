@@ -1,0 +1,28 @@
+<div>
+    <textarea class="message-stack"></textarea>
+</div>
+<div>
+    <input type="text" class="message">
+    <button class="send-button">Send</button>
+</div>
+
+<script src="/bundles/broadcastdemo/js/jquery-1.10.2.min.js"></script>
+<script src="/bundles/broadcastdemo/js/sockjs-0.3.min.js"></script>
+<script>
+    var sock = new SockJS('http://localhost:8081/broadcast');
+    sock.onmessage = function (event) {
+        $('.message-stack').append(event.data+"\r\n");
+        console.log(event.data);
+    };
+
+    $('.send-button').on('click', function() {
+        $.ajax({
+            type: 'post',
+            url: '{{ path('broadcast_demo_send_message') }}',
+            data: { message: $('.message').val() },
+            success: function(response) {
+                $('.message').val('');
+            }
+        });
+    });
+</script>
